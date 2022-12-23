@@ -1,0 +1,377 @@
+@import url('https://fonts.googleapis.com/css2?family=Beau+Rivage&family=Lora:ital,wght@1,500&family=Ms+Madi&display=swap');
+
+html {
+  background-color: black;
+  /* Safari, Chrome and Opera > 12.1 */
+  -webkit-animation: fadein 5s;
+  /* Firefox < 16 */
+  -moz-animation: fadein 5s;
+  /* Internet Explorer */
+  -ms-animation: fadein 5s;
+  /* Opera < 12.1 */
+  -o-animation: fadein 5s;
+  /* Everything else */
+  animation: fadein 5s;
+
+  overflow-x: hidden;
+}
+
+
+
+
+.banner {
+  background: white;
+  color: black;
+  padding: 1vh;
+  font-family: 'Beau Rivage';
+  font-size: 3em;
+}
+
+.header {
+  position: sticky;
+  top: 0em;
+  background-color: black;
+  padding: 0.2em;
+  z-index: 100000;
+  width: 97vw;
+}
+.sep {
+  color: white;
+  border-color: white;
+  font-weight: bold;
+}
+
+.header-tag {
+  display: inline;
+  font-size: 2em;
+  position: absolute;
+  margin: 0.4em 0em 0em 1em;
+
+  font-family: 'Beau Rivage';
+}
+
+h1, h2, h3, h4, p, pre {
+  color:white;
+  text-align: center;
+  margin: 0 auto;
+}
+
+p {
+  width: 70vw;
+  max-width: 70vw;
+}
+
+.menu-header {
+  margin: 0;
+  font-family: sans-serif;
+  width: 100%;
+  height: 5em;
+  box-sizing: border-box;
+}
+.logo {
+  float: left;
+  padding: 0.5em 0em 0em 0em;
+  margin-left: 2em;
+  height: 2em;
+
+}
+.logo > img {
+  height: 4em;
+
+  border-radius: 50%;
+}
+
+
+.menu-nav {
+  height: 5em;
+}
+.menu-nav > ul {
+  margin: 0;
+  padding: 0;
+  display: flex;
+  float: right;
+  overflow-x: hidden;
+}
+
+.menu-list {
+  list-style-type: none;
+}
+.menu-list > a {
+  line-height: 3em;
+  padding: 0 20px;
+  color: #fff;
+  padding: 1em;
+  color: white;
+  float: right;
+}
+
+.menu-toggle {
+  float: right;
+  margin: 0em;
+  color: #fff;
+  float: right;
+  font-size: 1.7em;
+  line-height: 50px;
+  display: none;
+}
+
+
+.liberty336-ascii {
+  display: block;
+  margin: 0 auto;
+  width: 50vw;
+}
+
+
+.home-intro {
+  width: 94vw;
+  font-size: 1.5em;
+}
+
+
+
+
+/* Begin index section */
+
+.index {
+  font-size: 1.2em;
+  width: 50vw;
+}
+
+.image-link {
+  display: block;
+  color:#37a649;
+  font-size: 1.2em;
+  text-align: center;
+  margin: 0 auto;
+
+}
+
+
+.quoting-images {
+  display: block;
+  margin: 0 auto;
+  width: 60vw;
+  height: auto;
+
+}
+
+/* End index section */
+/* Begin faq section */
+
+
+.faq-section {
+  width: 90vw;
+  margin: 0 auto;
+  padding:1em;
+
+
+}
+
+.reference-wrap {
+}
+
+.faq-reference-list {
+  list-style-type: none;
+}
+
+.ref-li {
+
+}
+.ref-li > * > a {
+  color: white;
+}
+
+.faq {
+
+
+}
+
+.qa {
+  display: block;
+  margin: 0 auto;
+  border: 1px solid white;
+  padding: 3em;
+  text-align: center;
+  background-color: #2a2a2b;
+}
+
+.qah3 {
+  width: 50vw;
+}
+
+.faq-li {
+}
+
+.faq-li > * > a {
+  color: white;
+}
+
+.faq-video {
+  width: 70vw !important;
+}
+
+#what-is-liberty336 {
+
+}
+
+
+.faq-trumpers {
+  display: block;
+    margin: 0 auto;
+    width: 60vw;
+}
+
+/* End faq section */
+
+
+/* Begin about section */
+
+.about-div {
+  border: 1px solid white;
+}
+
+
+.about-index {
+  font-size: 1.25em;
+}
+
+.about-image {
+  width: 50%;
+  display: block;
+  margin: 0 auto;
+}
+
+/* End about section */
+
+
+/*** Begin Mobile ***/
+
+@media (max-width: 1000px)
+{
+
+  html{
+
+  }
+
+  .header {
+    width: 97vw;
+  }
+  .home-intro {
+    width: 50vw;
+    font-size: .9em;
+  }
+  .liberty336-ascii {
+    display: block;
+    margin: 0 auto;
+    width: 90vw !important;
+  }
+
+
+
+  .menu-header {
+    padding: 0 20px;
+  }
+  .logo {
+    line-height: 3em;
+    margin: 0em 0em 0em 2em !important;
+  }
+  .menu-nav {
+    position: absolute;
+    width: 100%;
+    background: #333;
+    top: 3em;
+    left: -120%;
+    transition: 0.5s;
+    height: calc(100vh - 50px);
+  }
+  .menu-nav-active {
+    position: absolute;
+    width: 100%;
+    background: #0a0808;
+    top: 5em;
+    left: 0%;
+    transition: 0.5s;
+    height: calc(100vh - 50px);
+    color:white;
+  }
+
+  .menu-nav > ul {
+    display: block;
+    text-align: center;
+  }
+  .menu-list > a {
+    border-bottom: 1px solid black;
+  }
+  .menu-list > a:hover {
+    background-color: grey;
+  }
+  .menu-list > a {
+    text-align: center;
+    margin: 0 auto;
+    width: 100vw;
+  }
+
+  .menu-toggle {
+    display: block;
+    line-height: 3em;
+    z-index: 10;
+  }
+
+  img {
+    margin-left: -5vw;
+  }
+
+
+
+  /* begin mobile index section */
+
+
+  .index {
+
+    width: 70vw;
+
+  }
+
+  .image-link {
+    display: block;
+    margin: 0 auto;
+    text-align: center;
+  }
+
+
+  .quoting-images {
+    display: block;
+    margin: 0 auto;
+    width: 90vw;
+    height: auto;
+  }
+  /* end mobile index section */
+
+
+
+  /* begin mobile faq section */
+  .faq-trumpers{
+    display: block;
+    margin: 0 auto;
+    width: 60vw;
+  }
+  /* end mobile faq section */
+
+  /* begin mobile about section */
+
+  .about-image {
+    width: 60%;
+  }
+
+  /* end mobile about section */
+}
+/* End mobile toggle-menu */
+
+@media (width: 1000px)
+{
+  html {
+    width: 99vw;
+    overflow-x: hidden;
+  }
+}
