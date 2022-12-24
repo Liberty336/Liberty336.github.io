@@ -122,6 +122,11 @@ p {
   width: 50vw;
 }
 
+.ungovernable-image {
+  display: block;
+  margin: 0 auto;
+  width: 60vw;
+}
 
 .home-intro {
   width: 94vw;
