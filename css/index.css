@@ -152,6 +152,15 @@ p {
 
 }
 
+.image-link:visited {
+  display: block;
+  color:#37a649;
+  font-size: 1.2em;
+  text-align: center;
+  margin: 0 auto;
+
+}
+
 
 .quoting-images {
   display: block;
