@@ -149,6 +149,7 @@ p {
   font-size: 1.2em;
   text-align: center;
   margin: 0 auto;
+  width: 80vw;
 
 }
 
@@ -260,7 +261,7 @@ p {
 .join-list {
   text-align: left;
   margin-left: 20%;
-  width: 95vw; 
+  width: 95vw;
   font-size: 1.25em;
 }
 
