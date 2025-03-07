@@ -291,7 +291,7 @@ p {
 }
 
 .mission-div {
-        background-image: url('https://raw.githubusercontent.com/Liberty336/Liberty336.github.io/refs/heads/main/lib/images/green-mountain-boys-militia-men-transported-weapons-powder-and-ammunition-from-fort-ticondera.jpg');
+    background-image: url('https://raw.githubusercontent.com/Liberty336/Liberty336.github.io/refs/heads/main/lib/images/green-mountain-boys-militia-men-transported-weapons-powder-and-ammunition-from-fort-ticondera.jpg');
     background-size: cover;          /* Scales image to cover the entire section */
     background-position: top;     
     background-repeat: no-repeat;    /* Prevents image tiling */
@@ -333,7 +333,7 @@ p {
   text-align: center;
   
   width: 100%;
-  height: 100vh;
+  height: 5rem;
   object-fit: cover;
   position: absolute;
   top: 0;
