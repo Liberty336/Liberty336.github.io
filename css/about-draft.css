@@ -253,6 +253,7 @@ p {
 
 .about-page {
   border: 1px solid white;
+  background-color: black;
 }
 
 
@@ -394,6 +395,7 @@ p {
 
   }
   
+  
   h2 {
     font-size: 1.5rem;
   }
@@ -518,6 +520,11 @@ p {
     overflow-x: hidden;
   }
 }
+
+
+
+
+
 
 
 
