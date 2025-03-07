@@ -73,7 +73,7 @@
 
 
   <br><br>
- <div style="color:white;text-align:center;margin:1em;font-size:1.5em;" id="autoTyper"></div>
+ <div id="autoTyper" style="color:white;text-align:center; width: 99vw;font-weight:900;"></div>
 
       <section class="aspire-section">
         <div>
@@ -187,60 +187,87 @@ The Citizen side is intended for former members who wish to remain part of the g
 
 
 
-    <script>class AutoTyper {
-    constructor(element, options = {}) {
-        this.element = element; // The HTML element where we'll type
-        this.text = options.text || '';
-        this.speed = options.speed || 100; // milliseconds per character
-        this.loop = options.loop || false;
-        this.currentIndex = 0;
-        this.isTyping = false;
+    <script>
+    class AutoTyper {
+        constructor(element, options = {}) {
+            this.element = element; // The HTML element where we'll type
+            this.text = options.text || '';
+            this.speed = options.speed || 100; // milliseconds per character
+            this.loop = options.loop || false;
+            this.currentIndex = 0;
+            this.isTyping = false;
+        }
+
+        type() {
+            if (this.isTyping) return;
+            this.isTyping = true;
+            let i = 0;
+            const typeChar = () => {
+                if (i < this.text.length) {
+                    this.element.textContent += this.text.charAt(i);
+                    i++;
+                    setTimeout(() => requestAnimationFrame(typeChar), this.speed);
+                } else {
+                    this.isTyping = false;
+                    if (this.loop) {
+                        this.reset();
+                        setTimeout(() => this.type(), this.speed * 2); // Small pause before looping
+                    }
+                }
+            };
+            requestAnimationFrame(typeChar);
+        }
+
+        reset() {
+            this.element.textContent = '';
+            this.currentIndex = 0;
+        }
+
+        // Method to change text on the fly if you want to get fancy later
+        setText(newText) {
+            this.text = newText;
+            this.reset();
+        }
     }
 
-    type() {
-        if (this.isTyping) return;
-        this.isTyping = true;
-        let i = 0;
-        const typeChar = () => {
-            if (i < this.text.length) {
-                this.element.textContent += this.text.charAt(i);
-                i++;
-                setTimeout(() => requestAnimationFrame(typeChar), this.speed);
-            } else {
-                this.isTyping = false;
-                if (this.loop) {
-                    this.reset();
-                    setTimeout(() => this.type(), this.speed * 2); // Small pause before looping
+    // Dynamically inject media query using JavaScript
+    function applyResponsiveStyles() {
+        const style = document.createElement('style');
+        style.innerHTML = `
+            @media (max-width: 600px) {
+                #autoTyper {
+                    font-size: 1.0em; /* Smaller font size for small screens */
                 }
             }
-        };
-        requestAnimationFrame(typeChar);
+            @media (min-width: 800px) and (max-width: 1200px) {
+                #autoTyper {
+                    font-size: 1.2em; /* Medium font size for tablets/smaller desktops */
+                }
+            }
+            @media (min-width: 1201px) {
+                #autoTyper {
+                    font-size: 1.75em; /* Larger font size for big screens */
+                }
+            }
+        `;
+        document.head.appendChild(style);
     }
 
-    reset() {
-        this.element.textContent = '';
-        this.currentIndex = 0;
-    }
+    // Apply media query styles on document load
+    document.addEventListener('DOMContentLoaded', () => {
+        applyResponsiveStyles(); // Apply media query rules
 
-    // Method to change text on the fly if you want to get fancy later
-    setText(newText) {
-        this.text = newText;
-        this.reset();
-    }
-}
-
-// Usage:
-document.addEventListener('DOMContentLoaded', () => {
-    const typerElement = document.getElementById('autoTyper');
-    if (typerElement) {
-        const typer = new AutoTyper(typerElement, {
-            text: "We aspire to be the world's most advanced militia, representing from North Carolina.",
-            speed: 40,
-            loop: false
-        });
-        typer.type();
-    }
-});</script>
+        const typerElement = document.getElementById('autoTyper');
+        if (typerElement) {
+            const typer = new AutoTyper(typerElement, {
+                text: "We aspire to be the world's most advanced militia, representing from North Carolina.",
+                speed: 40,
+                loop: false
+            });
+            typer.type();
+        }
+    });
+    </script>
 
 
 
