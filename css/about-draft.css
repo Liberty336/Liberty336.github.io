@@ -140,7 +140,9 @@ p {
 }
 
 
-
+.aspire-section {
+  height: 20vh;
+}
 
 /* Begin index section */
 
@@ -290,11 +292,11 @@ p {
 .mission-div {
         background-image: url('https://raw.githubusercontent.com/Liberty336/Liberty336.github.io/refs/heads/main/lib/images/green-mountain-boys-militia-men-transported-weapons-powder-and-ammunition-from-fort-ticondera.jpg');
     background-size: cover;          /* Scales image to cover the entire section */
-    background-position: top;
+    background-position: top;     
     background-repeat: no-repeat;    /* Prevents image tiling */
     min-height: 50vh;              /* Optional: ensures section has height */
-
-
+  
+  
   padding:1em;
 }
 
@@ -305,7 +307,7 @@ p {
   -moz-text-stroke: 1px green;    /* Rarely needed now */
   text-stroke: 1px black;         /* Future standard */
   font-size: 2rem;
-
+  
   text-align:center;
 }
 
@@ -319,16 +321,16 @@ p {
 }
 
 .structure-div {
-
+  
 }
 
 .structure-top {
 }
 
-.struct-vid {
+.top-vid {
   margin: 0 auto;
   text-align: center;
-
+  
   width: 100%;
   height: 100vh;
   object-fit: cover;
@@ -338,8 +340,21 @@ p {
   z-index: -1;
 }
 
-.two-sides {
+.struct-vid {
+  margin: 0 auto;
+  text-align: center;
+  
+  width: 100vw;
+  height: 50vh;
+  object-fit: cover;
+  position: relative;
+  top: 0;
+  left: 0;
+  z-index: -1;
+}
 
+.two-sides {
+  
 }
 
 .short-overview-section {
@@ -347,16 +362,16 @@ p {
 }
 
 .short-overview-div {
-
+  
 }
 
 .history-section {
-
+  
 }
 
 
 .history-div {
-
+  
 }
 
 
@@ -377,13 +392,18 @@ p {
   html{
 
   }
+  
+  h2 {
+    font-size: 1.5rem;
+  }
 
   .header {
-    width: 97vw;
+    width: 100vw;
+    margin-left: -1rem;
   }
   .home-intro {
     width: 50vw;
-    font-size: .9em;
+    font-size: 1.5rem;
   }
   .liberty336-ascii {
     display: block;
@@ -497,3 +517,9 @@ p {
     overflow-x: hidden;
   }
 }
+
+
+
+
+
+
