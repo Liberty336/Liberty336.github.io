@@ -319,11 +319,11 @@ p {
 }
 
 .structure-section {
-  border: 1px solid white;
+
 }
 
 .structure-div {
-  
+
 }
 
 .structure-top {
@@ -411,6 +411,10 @@ p {
   
 }
 
+.tweets >* {
+  text-align: center !important;
+  margin: 0 auto;
+}
 
 
 /* End about section */
@@ -555,8 +559,6 @@ p {
     overflow-x: hidden;
   }
 }
-
-
 
 
 
