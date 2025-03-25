@@ -367,7 +367,7 @@ p {
 
 .dsr-p {
   color: white;
-  font-size: 2em;
+  font-size: 1.2rem;
   text-align: center;
   background-color: rgba(0, 0, 0, 0.6); /* Add some transparency to make the text stand out */
   padding: 20px;
@@ -555,10 +555,6 @@ p {
     overflow-x: hidden;
   }
 }
-
-
-
-
 
 
 
