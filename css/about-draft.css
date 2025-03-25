@@ -356,13 +356,7 @@ p {
 .directorate-of-service-and-rescue-section {
   width: 100vw; /* Full viewport width */
   height: 100vh; /* Full viewport height */
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  background-image: url('left-image.jpg'), url('right-image.jpg');
-  background-size: 50% 100%; /* Each image takes 50% of the width and 100% height */
-  background-position: left, right; /* Position left image to the left, right image to the right */
-  background-repeat: no-repeat; /* Prevent the images from repeating */
+
         }
 
 .dsr-p {
@@ -559,6 +553,8 @@ p {
     overflow-x: hidden;
   }
 }
+
+
 
 
 
