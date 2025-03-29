@@ -163,9 +163,16 @@ The Citizen side is intended for members who wish to contribute to the group and
           <br>
         </p>
         <h2>Our Directorate of Operations wants YOU!</h2>
-        <video autoplay muted loop class="do-vid">
+        <video autoplay muted loop id="do-vid" class="do-vid">
         <source src="https://i.imgur.com/z8AbHPC.mp4" type="video/mp4" >
         </video>
+
+<script>
+    var video = document.getElementById('do-vid');
+    video.addEventListener('contextmenu', function(event) {
+        event.preventDefault();
+    });
+</script>
         
       </section>
 
@@ -364,11 +371,6 @@ The Citizen side is intended for members who wish to contribute to the group and
     });
     </script>
 
-<script>
-  document.addEventListener('contextmenu', function(event) {
-    event.preventDefault();
-});
- </script>
   
   <script src="/js/menu.js"></script>
   <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
