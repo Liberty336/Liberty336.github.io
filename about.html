@@ -364,8 +364,12 @@ The Citizen side is intended for members who wish to contribute to the group and
     });
     </script>
 
-
-
+<script>
+  document.addEventListener('contextmenu', function(event) {
+    event.preventDefault();
+});
+ </script>
+  
   <script src="/js/menu.js"></script>
   <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
   <script src="https://kit.fontawesome.com/6ce454cc59.js" crossorigin="anonymous"></script>
