@@ -353,37 +353,8 @@ p {
 }
 
 
-
-/* Ensure the parent section has no uneven padding/margins */
 .directorate-of-service-and-rescue-section {
-  padding: 0;
-  margin: 0 auto;
-  width: 100vw;
-  box-sizing: border-box; /* Prevents padding from adding to width */
-}
-
-/* Center the div and constrain its width */
-.dsr-list-div {
-  max-width: 90%; /* Limits width to fit most screens */
-  margin: 0 auto; /* Centers the div horizontally */
-  text-align: center; /* Centers inline content */
-}
-
-/* Reset default <ol> styling and ensure centering */
-.dsr-list {
-  padding-left: 0; /* Removes default padding for numbering */
-  margin: 0 auto; /* Centers the list */
-  list-style-position: inside; /* Keeps numbering inside the centered block */
-  text-align: left; /* Aligns list items left within the centered container */
-  max-width: 100%; /* Prevents list from exceeding its parent */
-}
-
-/* Ensure list items wrap properly */
-.dsr-list li {
-  color: white;
-  text-align:center;
-  word-wrap: break-word; /* Ensures long text wraps */
-  overflow-wrap: break-word; /* Fallback for broader browser support */
+  width: 100vw; /* Full viewport width */
 }
 
 .dsr-p {
@@ -394,20 +365,17 @@ p {
   padding: 20px;
 }
 
-/* Mobile-specific adjustments */
-@media (max-width: 768px) {
-  .dsr-list-div {
-    max-width: 95%; /* Slightly wider on mobile for readability */
-  }
-  .dsr-list {
-    padding: 0;
-    margin: 0 auto;
-  }
-  .dsr-list li {
-    font-size: 0.9em; /* Slightly smaller text on mobile for better fit */
-  }
+.dsr-list-div {
+  text-align: center;
+  color: white;
+  width: 80vw;
+  margin: 0 auto;
 }
 
+.dsr-list > * {
+  color: white;
+  text-align: center;
+}
 
 
 .directorate-of-operations {
@@ -593,8 +561,6 @@ p {
     overflow-x: hidden;
   }
 }
-
-
 
 
 
