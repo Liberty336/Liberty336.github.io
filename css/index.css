@@ -69,7 +69,7 @@ p {
 .menu-header {
   margin: 0;
   font-family: sans-serif;
-  width: 100%;
+  width: 95%;
   height: 5em;
   box-sizing: border-box;
 }
@@ -561,6 +561,5 @@ p {
     overflow-x: hidden;
   }
 }
-
 
 
