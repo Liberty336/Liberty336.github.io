@@ -1,0 +1,386 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Liberty336 Directorate Quiz</title>
+    <link rel="stylesheet" href="quiz.css">
+</head>
+<body>
+    <header>
+        <h1>Liberty336 Directorate Quiz</h1>
+    </header>
+    <nav>
+        <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="about.html">About</a></li>
+            <li><a href="the_system.html">The System</a></li>
+            <li><a href="directorate_quiz.html">Directorate Quiz</a></li>
+        </ul>
+    </nav>
+    <main>
+        <p>Take this quiz to find out which Liberty336 directorate you’re best suited for!</p>
+        <div id="quiz-container">
+            <div id="question"></div>
+            <div id="options"></div>
+            <button id="next-btn" disabled>Next</button>
+            <div id="progress">Question 1 of 13</div>
+        </div>
+        <div id="result" style="display: none;"></div>
+    </main>
+    <script src="quiz.js"></script>
+</body>
+</html>
+
+
+<style>
+
+  body {
+    font-family: system-ui, -apple-system, Arial, sans-serif;
+    margin: 0 auto;
+    padding: 20px;
+    max-width: 800px;
+    text-align: center;
+    background-color: #1a1a1a;
+    color: #e0e0e0;
+}
+
+header h1 {
+    font-size: 2em;
+    margin: 20px 0;
+    color: #ffffff;
+}
+
+nav ul {
+    list-style: none;
+    padding: 0;
+    margin: 20px 0;
+}
+
+nav ul li {
+    display: inline;
+    margin: 0 15px;
+}
+
+nav ul li a {
+    color: #4a90e2;
+    text-decoration: none;
+    transition: color 0.2s;
+}
+
+nav ul li a:hover {
+    color: #80b3ff;
+}
+
+nav ul li a:visited {
+    color: #4a90e2;
+}
+
+main {
+    text-align: left;
+}
+
+main p {
+    font-size: 1.1em;
+    margin-bottom: 20px;
+    text-align: center;
+    color: #e0e0e0;
+}
+
+#quiz-container {
+    background: #2a2a2a;
+    padding: 20px;
+    border: 1px solid #3a3a3a;
+    border-radius: 8px;
+}
+
+#question {
+    font-size: 1.2em;
+    font-weight: bold;
+    margin-bottom: 20px;
+    color: #ffffff;
+}
+
+.option {
+    display: block;
+    padding: 12px;
+    margin: 10px 0;
+    background: #3a3a3a;
+    cursor: pointer;
+    border-radius: 5px;
+    color: #e0e0e0;
+    transition: background 0.2s;
+}
+
+.option:hover {
+    background: #4a4a4a;
+}
+
+.option.selected {
+    background: #00a3a3;
+    color: #ffffff;
+}
+
+#next-btn {
+    padding: 10px 20px;
+    background: #00a3a3;
+    color: #ffffff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    display: block;
+    margin: 20px auto;
+    transition: background 0.2s;
+}
+
+#next-btn:hover:not(:disabled) {
+    background: #00c4c4;
+}
+
+#next-btn:disabled {
+    background: #4a4a4a;
+    cursor: not-allowed;
+}
+
+#progress {
+    text-align: center;
+    margin-top: 10px;
+    font-size: 0.9em;
+    color: #b0b0b0;
+}
+
+#result {
+    margin-top: 20px;
+    padding: 20px;
+    background: #2a2a2a;
+    border: 1px solid #3a3a3a;
+    border-radius: 8px;
+    text-align: center;
+}
+
+#result h2 {
+    font-size: 1.5em;
+    margin-bottom: 10px;
+    color: #ffffff;
+}
+
+#result p {
+    font-size: 1.1em;
+    margin-bottom: 20px;
+    color: #e0e0e0;
+}
+
+#result button {
+    padding: 10px 20px;
+    background: #00a3a3;
+    color: #ffffff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background 0.2s;
+}
+
+#result button:hover {
+    background: #00c4c4;
+}
+</style>
+
+
+<script>
+  // Quiz data
+const quizData = [
+    {
+        question: "How do you prefer to contribute to your community?",
+        options: [
+            { text: "Volunteering to teach skills or do labor for the community", directorate: "DSR", points: 1 },
+            { text: "Raising awareness about issues/news", directorate: "DPA", points: 1 },
+            { text: "Doing things behind the scenes", directorate: "DO", points: 1 },
+            { text: "Doing experiments and hobby projects", directorate: "DERP", points: 1 }
+        ]
+    },
+mueller: {
+        question: "What are you motivated to do most?",
+        options: [
+            { text: "Fighting or investigating for my community", directorate: "DO", points: 1 },
+            { text: "Empowering the public with education", directorate: "DPA", points: 1 },
+            { text: "Volunteering for service or rescue", directorate: "DSR", points: 1 },
+            { text: "To discover new things", directorate: "DERP", points: 1 }
+        ]
+    },
+    {
+        question: "What skill sets are you most confident in?",
+        options: [
+            { text: "Math and Science", directorate: "DERP", points: 1 },
+            { text: "Empathy and communication", directorate: "DPA", points: 1 },
+            { text: "Keeping secrets and getting revenge", directorate: "DO", points: 1 },
+            { text: "First Aid, FUNSAR [Fundamentals of Search and Rescue]", directorate: "DSR", points: 1 }
+        ]
+    },
+    {
+        question: "What role would you take in a community crisis?",
+        options: [
+            { text: "Providing first aid or searching for missing people", directorate: "DSR", points: 1 },
+            { text: "Gathering and analyzing critical information", directorate: "DO", points: 1 },
+            { text: "Developing tools or solutions to aid recovery", directorate: "DERP", points: 1 },
+            { text: "Communicating updates to keep the public informed", directorate: "DPA", points: 1 }
+        ]
+    },
+    {
+        question: "What type of project excites you most?",
+        options: [
+            { text: "Organizing a community cleanup or relief effort", directorate: "DSR", points: 1 },
+            { text: "Planning a strategic operation to uncover hidden threats", directorate: "DO", points: 1 },
+            { text: "Building a prototype for a new technology or process", directorate: "DERP", points: 1 },
+            { text: "Creating a campaign to educate the public", directorate: "DPA", points: 1 }
+        ]
+    },
+    {
+        question: "How do you approach problem-solving?",
+        options: [
+            { text: "Hands-on, helping people directly", directorate: "DSR", points: 1 },
+            { text: "Discreetly, using data and strategy", directorate: "DO", points: 1 },
+            { text: "Experimentally, testing new ideas", directorate: "DERP", points: 1 },
+            { text: "Collaboratively, discussing with others", directorate: "DPA", points: 1 }
+        ]
+    },
+    {
+        question: "What’s your preferred way to learn new skills?",
+        options: [
+            { text: "Through practical, hands-on training like rescue drills", directorate: "DSR", points: 1 },
+            { text: "By studying complex systems or tactics", directorate: "DO", points: 1 },
+            { text: "Through trial-and-error in a lab or workshop", directorate: "DERP", points: 1 },
+            { text: "By engaging with people and their stories", directorate: "DPA", points: 1 }
+        ]
+    },
+    {
+        question: "What’s your strength in a team setting?",
+        options: [
+            { text: "Jumping in to assist wherever needed", directorate: "DSR", points: 1 },
+            { text: "Leading with focus and secrecy", directorate: "DO", points: 1 },
+            { text: "Innovating with creative solutions", directorate: "DERP", points: 1 },
+            { text: "Building trust and clear communication", directorate: "DPA", points: 1 }
+        ]
+    },
+    {
+        question: "How would you spend a day contributing to Liberty336?",
+        options: [
+            { text: "Helping at a community service event or training for rescue", directorate: "DSR", points: 1 },
+            { text: "Conducting research for a high-stakes mission", directorate: "DO", points: 1 },
+            { text: "Working on a metallurgy or chemistry experiment", directorate: "DERP", points: 1 },
+            { text: "Speaking at a public event or answering questions", directorate: "DPA", points: 1 }
+        ]
+    },
+    {
+        question: "What kind of impact do you want to make?",
+        options: [
+            { text: "Immediate, tangible help for those in need", directorate: "DSR", points: 1 },
+            { text: "Long-term security through strategic wins", directorate: "DO", points: 1 },
+            { text: "Groundbreaking discoveries for future progress", directorate: "DERP", points: 1 },
+            { text: "Widespread awareness and community unity", directorate: "DPA", points: 1 }
+        ]
+    },
+    {
+        question: "What environment do you thrive in?",
+        options: [
+            { text: "Fast-paced, helping in emergencies", directorate: "DSR", points: 1 },
+            { text: "High-pressure, confidential settings", directorate: "DO", points: 1 },
+            { text: "A workshop or lab for experimentation", directorate: "DERP", points: 1 },
+            { text: "Public-facing, interactive spaces", directorate: "DPA", points: 1 }
+        ]
+    },
+    {
+        question: "What’s your approach to handling sensitive information?",
+        options: [
+            { text: "Use it to help others in practical ways", directorate: "DSR", points: 1 },
+            { text: "Protect it at all costs and act on it", directorate: "DO", points: 1 },
+            { text: "Study it to inform experiments", directorate: "DERP", points: 1 },
+            { text: "Share only what’s safe for the public", directorate: "DPA", points: 1 }
+        ]
+    },
+    {
+        question: "What inspires you to take action?",
+        options: [
+            { text: "Seeing people in need of help", directorate: "DSR", points: 1 },
+            { text: "Uncovering threats to the community", directorate: "DO", points: 1 },
+            { text: "The chance to invent something new", directorate: "DERP", points: 1 },
+            { text: "Connecting with and informing others", directorate: "DPA", points: 1 }
+        ]
+    }
+];
+
+// Directorate descriptions
+const directorateDescriptions = {
+    "DSR": "You’re dedicated to serving your community through volunteering and disaster response. The Directorate of Service & Rescue values hands-on help, from first aid to search and rescue, for both skilled and unskilled volunteers.",
+    "DO": "You thrive in high-stakes, covert operations, using intelligence and strategy to protect the community. The Directorate of Operations seeks highly motivated, intelligent individuals ready to risk it all for cyber and real-world missions.",
+    "DERP": "You’re a curious innovator, passionate about experimental research from blacksmithing to high-tech chemistry. The Directorate of Experimental Research Projects is perfect for militant engineers and scientists who avoid combat roles.",
+    "DPA": "You excel at engaging the public and sharing knowledge without compromising sensitive information. The Directorate of Public Affairs focuses on building trust and awareness through clear, careful communication."
+};
+
+// Quiz logic
+let currentQuestion = 0;
+let scores = { "DSR": 0, "DO": 0, "DERP": 0, "DPA": 0 };
+
+const questionElement = document.getElementById("question");
+const optionsElement = document.getElementById("options");
+const nextButton = document.getElementById("next-btn");
+const resultElement = document.getElementById("result");
+const quizContainer = document.getElementById("quiz-container");
+const progressElement = document.getElementById("progress");
+
+function loadQuestion() {
+    const q = quizData[currentQuestion];
+    questionElement.textContent = `${currentQuestion + 1}. ${q.question}`;
+    optionsElement.innerHTML = "";
+    q.options.forEach((option, index) => {
+        const div = document.createElement("div");
+        div.classList.add("option");
+        div.textContent = option.text;
+        div.addEventListener("click", () => selectOption(index));
+        optionsElement.appendChild(div);
+    });
+    nextButton.disabled = true;
+    progressElement.textContent = `Question ${currentQuestion + 1} of ${quizData.length}`;
+}
+
+function selectOption(index) {
+    const options = optionsElement.querySelectorAll(".option");
+    options.forEach(o => o.classList.remove("selected"));
+    options[index].classList.add("selected");
+    nextButton.disabled = false;
+    const option = quizData[currentQuestion].options[index];
+    scores[option.directorate] += option.points;
+}
+
+function showResult() {
+    const maxScore = Math.max(...Object.values(scores));
+    const topDirectorate = Object.keys(scores).find(d => scores[d] === maxScore);
+    quizContainer.style.display = "none";
+    resultElement.style.display = "block";
+    resultElement.innerHTML = `
+        <h2>Your Result</h2>
+        <p>You’re best suited for the <strong>${topDirectorate}</strong> Directorate!</p>
+        <p>${directorateDescriptions[topDirectorate]}</p>
+        <button onclick="restartQuiz()">Take Quiz Again</button>
+    `;
+}
+
+function restartQuiz() {
+    currentQuestion = 0;
+    scores = { "DSR": 0, "DO": 0, "DERP": 0, "DPA": 0 };
+    quizContainer.style.display = "block";
+    resultElement.style.display = "none";
+    loadQuestion();
+}
+
+nextButton.addEventListener("click", () => {
+    currentQuestion++;
+    if (currentQuestion < quizData.length) {
+        loadQuestion();
+    } else {
+        showResult();
+    }
+});
+
+// Start the quiz
+loadQuestion();
+</script>
