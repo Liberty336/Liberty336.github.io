@@ -1,30 +1,25 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Liberty336 Directorate Quiz</title>
   <style>
     body {
-      font-family: system-ui, -apple-system, Arial, sans-serif;
+      font-family: system-ui, sans-serif;
       margin: 0 auto;
       padding: 20px;
       max-width: 800px;
-      text-align: center;
       background-color: #1a1a1a;
       color: #e0e0e0;
+      text-align: center;
     }
 
-    header h1 {
-      font-size: 2em;
-      margin: 20px 0;
-      color: #ffffff;
-    }
+    h1 { color: #fff; }
 
     nav ul {
       list-style: none;
       padding: 0;
-      margin: 20px 0;
     }
 
     nav ul li {
@@ -35,52 +30,30 @@
     nav ul li a {
       color: #4a90e2;
       text-decoration: none;
-      transition: color 0.2s;
     }
 
     nav ul li a:hover {
       color: #80b3ff;
     }
 
-    nav ul li a:visited {
-      color: #4a90e2;
-    }
-
-    main {
-      text-align: left;
-    }
-
-    main p {
-      font-size: 1.1em;
-      margin-bottom: 20px;
-      text-align: center;
-      color: #e0e0e0;
-    }
-
     #quiz-container {
+      margin-top: 20px;
       background: #2a2a2a;
       padding: 20px;
-      border: 1px solid #3a3a3a;
-      border-radius: 8px;
+      border-radius: 10px;
     }
 
     #question {
       font-size: 1.2em;
-      font-weight: bold;
       margin-bottom: 20px;
-      color: #ffffff;
     }
 
     .option {
-      display: block;
-      padding: 12px;
+      padding: 10px;
       margin: 10px 0;
       background: #3a3a3a;
-      cursor: pointer;
       border-radius: 5px;
-      color: #e0e0e0;
-      transition: background 0.2s;
-      user-select: none;
+      cursor: pointer;
     }
 
     .option:hover {
@@ -89,78 +62,35 @@
 
     .option.selected {
       background: #00a3a3;
-      color: #ffffff;
+      color: white;
     }
 
     #next-btn {
+      margin-top: 20px;
       padding: 10px 20px;
       background: #00a3a3;
-      color: #ffffff;
+      color: white;
       border: none;
       border-radius: 5px;
       cursor: pointer;
-      display: block;
-      margin: 20px auto;
-      transition: background 0.2s;
-    }
-
-    #next-btn:hover:not(:disabled) {
-      background: #00c4c4;
     }
 
     #next-btn:disabled {
-      background: #4a4a4a;
+      background: #555;
       cursor: not-allowed;
     }
 
-    #progress {
-      text-align: center;
-      margin-top: 10px;
-      font-size: 0.9em;
-      color: #b0b0b0;
-    }
-
     #result {
-      margin-top: 20px;
-      padding: 20px;
-      background: #2a2a2a;
-      border: 1px solid #3a3a3a;
-      border-radius: 8px;
-      text-align: center;
       display: none;
-    }
-
-    #result h2 {
-      font-size: 1.5em;
-      margin-bottom: 10px;
-      color: #ffffff;
-    }
-
-    #result p {
-      font-size: 1.1em;
-      margin-bottom: 20px;
-      color: #e0e0e0;
-    }
-
-    #result button {
-      padding: 10px 20px;
-      background: #00a3a3;
-      color: #ffffff;
-      border: none;
-      border-radius: 5px;
-      cursor: pointer;
-      transition: background 0.2s;
-    }
-
-    #result button:hover {
-      background: #00c4c4;
+      margin-top: 30px;
+      background: #2a2a2a;
+      padding: 20px;
+      border-radius: 10px;
     }
   </style>
 </head>
 <body>
-  <header>
-    <h1>Liberty336 Directorate Quiz</h1>
-  </header>
+  <h1>Liberty336 Directorate Quiz</h1>
   <nav>
     <ul>
       <li><a href="index.html">Home</a></li>
@@ -169,13 +99,14 @@
       <li><a href="quiz1.html">Directorate Quiz</a></li>
     </ul>
   </nav>
+
   <main>
     <p>Take this quiz to find out which Liberty336 directorate you’re best suited for!</p>
     <div id="quiz-container">
       <div id="question"></div>
       <div id="options"></div>
       <button id="next-btn" disabled>Next</button>
-      <div id="progress">Question 1 of ?</div>
+      <div id="progress"></div>
     </div>
     <div id="result"></div>
   </main>
@@ -200,11 +131,110 @@
           { text: "To discover new things", directorate: "DERP" }
         ]
       },
-      // Add remaining questions here...
+      {
+        question: "Which task sounds most appealing?",
+        options: [
+          { text: "Helping with emergency efforts or rebuilding", directorate: "DSR" },
+          { text: "Creating flyers, memes, or infographics", directorate: "DPA" },
+          { text: "Gathering information or watching patterns", directorate: "DO" },
+          { text: "Doing research and building devices", directorate: "DERP" }
+        ]
+      },
+      {
+        question: "Which of these are you best at?",
+        options: [
+          { text: "Helping others directly", directorate: "DSR" },
+          { text: "Explaining complex ideas clearly", directorate: "DPA" },
+          { text: "Noticing subtle clues others miss", directorate: "DO" },
+          { text: "Solving puzzles or making things", directorate: "DERP" }
+        ]
+      },
+      {
+        question: "What kind of work environment do you prefer?",
+        options: [
+          { text: "Active and hands-on", directorate: "DSR" },
+          { text: "Creative and expressive", directorate: "DPA" },
+          { text: "Strategic and careful", directorate: "DO" },
+          { text: "Independent and experimental", directorate: "DERP" }
+        ]
+      },
+      {
+        question: "Which role would you most enjoy?",
+        options: [
+          { text: "Community first responder", directorate: "DSR" },
+          { text: "Public speaker or educator", directorate: "DPA" },
+          { text: "Investigator or analyst", directorate: "DO" },
+          { text: "Inventor or tinkerer", directorate: "DERP" }
+        ]
+      },
+      {
+        question: "How do you approach a new problem?",
+        options: [
+          { text: "Jump in and help", directorate: "DSR" },
+          { text: "Explain it to others", directorate: "DPA" },
+          { text: "Observe quietly before acting", directorate: "DO" },
+          { text: "Test out ideas and see what works", directorate: "DERP" }
+        ]
+      },
+      {
+        question: "What’s most rewarding to you?",
+        options: [
+          { text: "Knowing I helped someone directly", directorate: "DSR" },
+          { text: "Knowing I opened someone’s eyes", directorate: "DPA" },
+          { text: "Knowing I cracked a hard mystery", directorate: "DO" },
+          { text: "Knowing I made something cool", directorate: "DERP" }
+        ]
+      },
+      {
+        question: "Pick a motto:",
+        options: [
+          { text: "No one left behind", directorate: "DSR" },
+          { text: "Knowledge is power", directorate: "DPA" },
+          { text: "Trust but verify", directorate: "DO" },
+          { text: "Break it and rebuild it better", directorate: "DERP" }
+        ]
+      },
+      {
+        question: "Which of these best describes you?",
+        options: [
+          { text: "Reliable and courageous", directorate: "DSR" },
+          { text: "Outgoing and persuasive", directorate: "DPA" },
+          { text: "Watchful and strategic", directorate: "DO" },
+          { text: "Curious and inventive", directorate: "DERP" }
+        ]
+      },
+      {
+        question: "What kind of books or media do you prefer?",
+        options: [
+          { text: "Real-life survival or rescue stories", directorate: "DSR" },
+          { text: "Social or political commentary", directorate: "DPA" },
+          { text: "Crime, espionage, or conspiracies", directorate: "DO" },
+          { text: "Science fiction or maker videos", directorate: "DERP" }
+        ]
+      },
+      {
+        question: "In a group project, you’re usually the one who...",
+        options: [
+          { text: "Does the hard physical tasks", directorate: "DSR" },
+          { text: "Gives the presentation", directorate: "DPA" },
+          { text: "Keeps track of details", directorate: "DO" },
+          { text: "Builds the prototype", directorate: "DERP" }
+        ]
+      },
+      {
+        question: "Which of these excites you most?",
+        options: [
+          { text: "Saving lives or providing aid", directorate: "DSR" },
+          { text: "Changing minds with information", directorate: "DPA" },
+          { text: "Uncovering hidden truths", directorate: "DO" },
+          { text: "Creating something new", directorate: "DERP" }
+        ]
+      }
     ];
 
     let currentQuestion = 0;
-    let scores = { DSR: 0, DPA: 0, DO: 0, DERP: 0 };
+    const scores = { DSR: 0, DPA: 0, DO: 0, DERP: 0 };
+    let selected = null;
 
     const questionEl = document.getElementById("question");
     const optionsEl = document.getElementById("options");
@@ -216,49 +246,43 @@
       const q = quizData[currentQuestion];
       questionEl.textContent = q.question;
       optionsEl.innerHTML = "";
+      selected = null;
+      nextBtn.disabled = true;
 
-      q.options.forEach((opt, i) => {
+      q.options.forEach((opt) => {
         const div = document.createElement("div");
         div.className = "option";
         div.textContent = opt.text;
-        div.addEventListener("click", () => {
-          document.querySelectorAll(".option").forEach(el => el.classList.remove("selected"));
+        div.onclick = () => {
+          document.querySelectorAll(".option").forEach(o => o.classList.remove("selected"));
           div.classList.add("selected");
+          selected = opt.directorate;
           nextBtn.disabled = false;
-          nextBtn.dataset.selection = opt.directorate;
-        });
+        };
         optionsEl.appendChild(div);
       });
 
-      nextBtn.disabled = true;
       progressEl.textContent = `Question ${currentQuestion + 1} of ${quizData.length}`;
     }
 
-    nextBtn.addEventListener("click", () => {
-      const selectedDirectorate = nextBtn.dataset.selection;
-      scores[selectedDirectorate]++;
+    nextBtn.onclick = () => {
+      if (selected) scores[selected]++;
       currentQuestion++;
-
       if (currentQuestion < quizData.length) {
         showQuestion();
       } else {
         showResult();
       }
-    });
+    };
 
     function showResult() {
       const top = Object.entries(scores).sort((a, b) => b[1] - a[1])[0];
       const [winner, score] = top;
-
-      questionEl.style.display = "none";
-      optionsEl.style.display = "none";
-      nextBtn.style.display = "none";
-      progressEl.style.display = "none";
-
+      document.getElementById("quiz-container").style.display = "none";
       resultEl.style.display = "block";
       resultEl.innerHTML = `
         <h2>You belong in the ${winner} directorate!</h2>
-        <p>Your strengths and interests align with this field. Total score: ${score}</p>
+        <p>You scored ${score} points in this category. Your values and strengths align with the mission of the ${winner} team.</p>
         <button onclick="location.reload()">Retake Quiz</button>
       `;
     }
@@ -267,3 +291,4 @@
   </script>
 </body>
 </html>
+
